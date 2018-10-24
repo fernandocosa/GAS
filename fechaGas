@@ -1,0 +1,46 @@
+function LeerFecha() {
+ var activacion = SpreadsheetApp.getActive().getSheetByName('Hoja 1'); //me activa la hoja de calculo
+  //var hoja = activacion.getSheetByName("Hoja 1"); // me selecciona la hoja de la hoja de calculo
+  var b2 = activacion.getRange(4,5).getValue(); // me rescata el valor 4,5
+  Logger.log("tendria que salir la fecha");
+  var fecha=b2;
+  var fechainternacional = Utilities.formatDate(new Date(fecha),"GMT+1","yyyy/MM/dd");
+  var b3 = b2;
+      activacion.getRange(8,5).setValue(b3);
+Logger.log(b2);
+}
+function tablaFecha(){
+   var activacion = SpreadsheetApp.getActive().getSheetByName('Hoja 1');
+  var mycaja =[];
+  var cogerfechas= activacion.getRange("B12:B14").getValue();
+  //var mycaja =[cogerfechas];
+  //activacion.getRange("D12:D14").setValue(mycaja);
+  for(var i = 0; i < recogerFecha.length; i++){
+       //var cambioStr= String(recogerFecha[i]);
+               var pintaFecha = Utilities.formatDate(new Date(recogerFecha[i]), "GMT+1","yyyy/MM/dd");
+               var fila = i+1;              
+               sheet.getRange(fila, 3).setValue(pintaFecha);
+                Logger.log(pintaFecha);
+             
+         }
+  Logger.log(mycaja);
+}
+
+/*function cambiarFormato() {
+  var sheet = SpreadsheetApp.getActive().getSheetByName('Hoja 1');
+  var b2 = sheet.getRange(1,2).getValue();
+ 
+ var recogerFecha= sheet.getRange(1,2,sheet.getLastRow(),1).getValues();//getrange(1,B, hasta fin de columna, 1 que es la misma columna)
+ //Logger.log(recogerFecha);
+ var tipoFecha= sheet.getRange(1, 1).getValue();
+      
+       
+     for(var i = 0; i < recogerFecha.length; i++){
+       //var cambioStr= String(recogerFecha[i]);
+               var pintaFecha = Utilities.formatDate(new Date(recogerFecha[i]), "GMT+1","yyyy/MM/dd");
+               var fila = i+1;              
+               sheet.getRange(fila, 3).setValue(pintaFecha);
+                Logger.log(pintaFecha);
+             
+         }
+}*/
