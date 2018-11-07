@@ -59,8 +59,5 @@ cell.setNumberFormat('.00');
 // https://developers.google.com/apps-script/reference/calendar/calendar
 // https://developers.google.com/apps-script/reference/calendar/calendar-event
 //
-function onOpen() {
-  Browser.msgBox('App Instructions - Please Read This Message', '1) Click Tools then Script Editor\\n2) Read/update the code with your desired values.\\n3) Then when ready click Run export_gcal_to_gsheet from the script editor.', Browser.Buttons.OK);
 
-}
 
